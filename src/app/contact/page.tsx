@@ -28,7 +28,7 @@ export default function ContactPage() {
     <div className="relative min-h-screen bg-[#0d0e12] text-[#f0f2f5] flex flex-col justify-between selection:bg-[#252834] selection:text-white">
       <Navbar />
 
-      <main className="pt-24 sm:pt-32 pb-32 px-4 sm:px-6 max-w-lg mx-auto flex-1 w-full">
+      <main className="pt-32 sm:pt-40 pb-36 sm:pb-44 px-4 sm:px-6 max-w-lg mx-auto flex-1 w-full">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="text-xs font-mono text-[#6e7485] mb-2 uppercase tracking-wide">

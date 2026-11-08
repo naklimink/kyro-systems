@@ -34,7 +34,7 @@ export default function AboutPage() {
     <div className="relative min-h-screen bg-[#0d0e12] text-[#f0f2f5] flex flex-col justify-between selection:bg-[#252834] selection:text-white">
       <Navbar />
 
-      <main className="pt-28 sm:pt-36 pb-32 px-4 sm:px-6 max-w-4xl mx-auto flex-1 w-full">
+      <main className="pt-36 sm:pt-44 pb-36 sm:pb-44 px-4 sm:px-6 max-w-4xl mx-auto flex-1 w-full">
         {/* Header */}
         <div className="text-center max-w-xl mx-auto mb-16">
           <div className="text-xs font-mono text-[#6e7485] mb-2 uppercase tracking-wide">

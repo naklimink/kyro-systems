@@ -11,10 +11,10 @@ export default function HomePage() {
     <div className="relative min-h-screen bg-[#0d0e12] text-[#f0f2f5] flex flex-col justify-between selection:bg-[#252834] selection:text-white">
       <Navbar />
 
-      <main className="pt-28 sm:pt-36 pb-32 px-4 sm:px-6 max-w-5xl mx-auto flex-1 w-full">
+      <main className="pt-36 sm:pt-44 pb-36 sm:pb-44 px-4 sm:px-6 max-w-5xl mx-auto flex-1 w-full">
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-normal tracking-tight text-[#f0f2f5] leading-[1.06] mb-6">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-normal tracking-tight text-[#f0f2f5] leading-[1.08] mb-6">
             Work less. <br />
             <span className="text-[#9ba1b0]">Run smoother.</span>
           </h1>

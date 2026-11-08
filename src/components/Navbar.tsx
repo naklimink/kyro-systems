@@ -83,7 +83,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top Header: Balanced Brand Logo on Left, Quiet Button on Right */}
-      <header className="fixed top-0 left-0 right-0 z-40 pointer-events-none p-4 sm:p-6">
+      <header className="fixed top-0 left-0 right-0 z-40 pointer-events-none p-4 sm:p-6 bg-gradient-to-b from-[#0d0e12]/85 via-[#0d0e12]/50 to-transparent">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           {/* KYRO Standalone Logo (no text beside it) */}
           <div className="pointer-events-auto">
