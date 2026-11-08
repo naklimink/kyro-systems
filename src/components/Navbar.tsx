@@ -4,15 +4,15 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { ArrowRight } from "lucide-react";
 import {
-  Home,
-  Box,
-  Workflow,
-  BookOpen,
-  Mail,
-  MoreHorizontal,
-  ArrowRight,
-} from "lucide-react";
+  PixelHome,
+  PixelServices,
+  PixelProcess,
+  PixelAbout,
+  PixelContact,
+  PixelMore,
+} from "./icons/PixelIcons";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -50,31 +50,31 @@ export default function Navbar() {
     {
       name: "Home",
       href: "/",
-      icon: Home,
+      icon: PixelHome,
       isActive: pathname === "/",
     },
     {
       name: "Services",
       href: "/services",
-      icon: Box,
+      icon: PixelServices,
       isActive: pathname.startsWith("/services"),
     },
     {
       name: "Process",
       href: "/how-it-works",
-      icon: Workflow,
+      icon: PixelProcess,
       isActive: pathname.startsWith("/how-it-works"),
     },
     {
       name: "About",
       href: "/about",
-      icon: BookOpen,
+      icon: PixelAbout,
       isActive: pathname.startsWith("/about"),
     },
     {
       name: "Contact",
       href: "/contact",
-      icon: Mail,
+      icon: PixelContact,
       isActive: pathname.startsWith("/contact"),
     },
   ];
@@ -138,12 +138,11 @@ export default function Navbar() {
                   }`}
                 >
                   <Icon
-                    className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-150 ${
+                    className={`w-5 h-5 transition-transform duration-150 ${
                       active
                         ? "text-white"
                         : "text-[#8e8e93] group-hover:text-[#f5f5f7] group-hover:scale-105"
                     }`}
-                    strokeWidth={1.8}
                   />
                   <span
                     className={`text-[10px] sm:text-[11px] font-medium tracking-tight leading-none mt-1 transition-colors ${
@@ -171,13 +170,12 @@ export default function Navbar() {
                     : "text-[#8e8e93] hover:text-[#f5f5f7] hover:bg-white/[0.05]"
                 }`}
               >
-                <MoreHorizontal
-                  className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-150 ${
+                <PixelMore
+                  className={`w-5 h-5 transition-transform duration-150 ${
                     moreOpen
                       ? "text-white"
                       : "text-[#8e8e93] group-hover:text-[#f5f5f7] group-hover:scale-105"
                   }`}
-                  strokeWidth={1.8}
                 />
                 <span
                   className={`text-[10px] sm:text-[11px] font-medium tracking-tight leading-none mt-1 transition-colors ${
