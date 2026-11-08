@@ -3,13 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight, Compass, PencilRuler, Blocks, HeartHandshake } from "lucide-react";
-import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { GridPattern } from "@/components/ui/grid-pattern";
 
 export default function HowItWorksPage() {
   const steps = [
@@ -32,124 +27,87 @@ export default function HowItWorksPage() {
       title: "Build & Connect",
       desc: "We set up the automations, test everything carefully, and link your existing tools together.",
       icon: Blocks,
-      timeframe: "Week 3-4",
+      timeframe: "Weeks 3–4",
     },
     {
       num: "04",
       title: "Support",
       desc: "We give you easy guides for your team and look after the system for 1 full year at no extra charge.",
       icon: HeartHandshake,
-      timeframe: "1 Year",
+      timeframe: "365 Days",
     },
   ];
 
   return (
-    <div className="relative min-h-screen bg-black text-foreground flex flex-col justify-between overflow-x-hidden selection:bg-neutral-800 selection:text-white">
+    <div className="relative min-h-screen bg-[#0d0e12] text-[#f0f2f5] flex flex-col justify-between selection:bg-[#252834] selection:text-white">
       <Navbar />
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 pointer-events-none [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]">
-        <GridPattern
-          width={36}
-          height={36}
-          x={-1}
-          y={-1}
-          strokeDasharray="4 2"
-          className="stroke-white/[0.04] fill-transparent"
-        />
-      </div>
-
-      <main className="relative pt-36 sm:pt-44 pb-28 px-6 max-w-4xl mx-auto flex-1 w-full">
+      <main className="pt-28 sm:pt-36 pb-32 px-4 sm:px-6 max-w-4xl mx-auto flex-1 w-full">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-xl mx-auto mb-16"
-        >
-          <div className="mb-4 flex justify-center">
-            <Badge
-              variant="outline"
-              className="px-3 py-1 rounded-full border-white/10 bg-white/[0.03] text-xs font-normal text-muted-foreground"
-            >
-              Engineering Lifecycle
-            </Badge>
+        <div className="text-center max-w-xl mx-auto mb-16">
+          <div className="text-xs font-mono text-[#6e7485] mb-2 uppercase tracking-wide">
+            Process
           </div>
-          <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight text-white mb-4">
-            How It Works
+          <h1 className="text-3xl sm:text-5xl font-normal tracking-tight text-[#f0f2f5] mb-4">
+            How it works
           </h1>
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+          <p className="text-base text-[#9ba1b0] leading-relaxed">
             Four simple steps. Clear timelines. Zero surprises.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Timeline Steps using Axis Cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="space-y-4 mb-20"
-        >
-          {steps.map((st, idx) => {
+        {/* 4-Step Engineering Timeline */}
+        <div className="space-y-3 mb-16">
+          {steps.map((st) => {
             const Icon = st.icon;
             return (
-              <Card
+              <div
                 key={st.num}
-                className="rounded-2xl border-white/[0.08] bg-[#0c0c0e]/80 backdrop-blur-xl p-6 sm:p-7 transition-all duration-300 hover:border-white/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.6)] group"
+                className="p-6 sm:p-7 rounded-xl bg-[#14161c] border border-white/[0.08] flex flex-col sm:flex-row sm:items-center gap-5 hover:border-white/[0.14] transition-colors"
               >
-                <CardContent className="p-0 flex flex-col sm:flex-row sm:items-center gap-5">
-                  <div className="flex items-center justify-between sm:justify-start gap-4 sm:w-28 shrink-0">
-                    <span className="font-mono text-2xl font-light text-neutral-400 group-hover:text-white transition-colors">
-                      {st.num}
-                    </span>
-                    <div className="w-9 h-9 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-muted-foreground group-hover:text-white transition-colors">
-                      <Icon className="w-4 h-4" />
-                    </div>
+                <div className="flex items-center gap-4 sm:w-24 shrink-0">
+                  <span className="font-mono text-2xl font-light text-[#6e7485]">
+                    {st.num}
+                  </span>
+                  <div className="w-8 h-8 rounded-lg bg-[#1e2029] border border-white/[0.06] flex items-center justify-center text-[#9ba1b0]">
+                    <Icon className="w-4 h-4 stroke-[1.5]" />
                   </div>
+                </div>
 
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="text-lg font-medium text-white group-hover:text-neutral-100 transition-colors">
-                        {st.title}
-                      </h3>
-                      <span className="text-[10px] font-mono text-muted-foreground/60 border border-white/[0.08] px-2 py-0.5 rounded-full">
-                        {st.timeframe}
-                      </span>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {st.desc}
-                    </p>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="text-base font-medium text-[#f0f2f5]">
+                      {st.title}
+                    </h3>
+                    <span className="text-[10px] font-mono text-[#6e7485] border border-white/[0.06] px-2 py-0.5 rounded">
+                      {st.timeframe}
+                    </span>
                   </div>
-                </CardContent>
-              </Card>
+                  <p className="text-sm text-[#9ba1b0] leading-relaxed">
+                    {st.desc}
+                  </p>
+                </div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
 
-        {/* Bottom CTA Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-2xl border border-white/[0.08] bg-[#0c0c0e]/60 p-8 sm:p-10 text-center backdrop-blur-md"
-        >
-          <h3 className="text-2xl font-semibold tracking-tight text-white mb-2">
+        {/* Bottom Callout */}
+        <div className="p-8 rounded-xl bg-[#121318] border border-white/[0.06] text-center max-w-2xl mx-auto">
+          <h3 className="text-xl font-medium text-[#f0f2f5] mb-2">
             Ready to simplify your everyday work?
           </h3>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-md mx-auto mb-6">
-            Let's start with a friendly, no-pressure chat about your operations.
+          <p className="text-sm text-[#9ba1b0] mb-6">
+            Let&apos;s start with a friendly, no-pressure chat about your operations.
           </p>
-          <Link href="/contact">
-            <Button
-              size="lg"
-              className="rounded-full px-7 h-11 bg-white text-black font-medium text-xs sm:text-sm hover:bg-neutral-200 transition-all shadow-md active:scale-95"
-            >
-              <span>Get started</span>
-              <ArrowRight className="w-4 h-4 ml-1.5" />
-            </Button>
+          <Link
+            href="/contact"
+            className="btn-press inline-flex items-center justify-center h-9 px-5 rounded-lg bg-[#f0f2f5] hover:bg-white text-[#0d0e12] text-xs font-medium transition-colors"
+          >
+            <span>Get started</span>
+            <ArrowRight className="w-3.5 h-3.5 ml-1.5 opacity-80" />
           </Link>
-        </motion.div>
+        </div>
       </main>
 
       <Footer />
