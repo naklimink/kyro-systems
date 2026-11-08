@@ -121,7 +121,7 @@ export default function Navbar() {
       {/* Bottom Floating Navigation Dock (matching the provided dock reference) */}
       <aside
         aria-label="Bottom Navigation Dock"
-        className="fixed bottom-5 sm:bottom-7 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none"
+        className="fixed bottom-4 sm:bottom-7 left-0 right-0 z-[9999] flex justify-center px-3 sm:px-4 pointer-events-none"
       >
         <div className="pointer-events-auto">
           <nav

@@ -188,3 +188,13 @@ body {
     @apply font-sans;
   }
 }
+
+/* Prevent Netlify preview badge overlay from obstructing the bottom navigation dock */
+iframe#nl-badge-frame,
+iframe[src*="netlify"],
+#netlify-badge {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
