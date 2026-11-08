@@ -80,33 +80,49 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none p-3 sm:p-5">
-      <div className="max-w-6xl mx-auto flex items-center justify-center md:justify-between relative">
-        {/* Left Brand Badge (Desktop) */}
-        <div className="pointer-events-auto hidden md:flex items-center">
-          <Link
-            href="/"
-            className="btn-press flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-[#0f0f11]/85 border border-white/[0.08] backdrop-blur-xl hover:border-white/20 transition-all shadow-lg"
-          >
-            <Image
-              src="/brand/kyro-logo-white.png"
-              alt="KYRO"
-              width={16}
-              height={19}
-              className="object-contain opacity-95"
-              priority
-            />
-            <span className="font-semibold text-xs tracking-tight text-[#f5f5f7]">
-              KYRO
-            </span>
-          </Link>
-        </div>
+    <>
+      {/* Top Header: Big Logo on the left, CTA on the right */}
+      <header className="fixed top-0 left-0 right-0 z-40 pointer-events-none p-4 sm:p-6">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          {/* Big Brand Logo (no text beside it) */}
+          <div className="pointer-events-auto">
+            <Link
+              href="/"
+              aria-label="KYRO Home"
+              className="btn-press block group hover:opacity-85 transition-opacity"
+            >
+              <Image
+                src="/brand/kyro-logo-white.png"
+                alt="KYRO"
+                width={44}
+                height={52}
+                className="w-10 sm:w-12 h-auto object-contain opacity-95 group-hover:opacity-100 transition-all drop-shadow-[0_2px_12px_rgba(255,255,255,0.12)]"
+                priority
+              />
+            </Link>
+          </div>
 
-        {/* Center: The Floating Deck / Dock */}
-        <div className="pointer-events-auto mx-auto md:absolute md:left-1/2 md:-translate-x-1/2">
+          {/* Right CTA */}
+          <div className="pointer-events-auto flex items-center">
+            <Link
+              href="/contact"
+              className="btn-press text-xs font-medium text-black bg-[#f5f5f7] hover:bg-white px-4 py-2 rounded-full transition-all shadow-md hover:shadow-lg"
+            >
+              Start a project
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      {/* Bottom Floating Navigation Dock */}
+      <aside
+        aria-label="Bottom Navigation Dock"
+        className="fixed bottom-5 sm:bottom-7 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none"
+      >
+        <div className="pointer-events-auto">
           <nav
             aria-label="Primary Navigation"
-            className="relative flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 rounded-2xl bg-[#0f0f11]/92 border border-white/[0.08] backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.7)]"
+            className="relative flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 rounded-2xl bg-[#0f0f11]/92 border border-white/[0.08] backdrop-blur-2xl shadow-[0_16px_50px_rgba(0,0,0,0.85)]"
           >
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -174,17 +190,17 @@ export default function Navbar() {
                 </span>
               </button>
 
-              {/* Popover Dropdown */}
+              {/* Popover Dropdown Opening UPWARDS */}
               {moreOpen && (
-                <div className="absolute top-full mt-2.5 right-0 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 w-[270px] p-3 rounded-2xl bg-[#121214]/95 border border-white/10 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.85)] z-50">
+                <div className="absolute bottom-full mb-3 right-0 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 w-[270px] p-3 rounded-2xl bg-[#121214]/95 border border-white/10 backdrop-blur-2xl shadow-[0_-12px_45px_rgba(0,0,0,0.85)] z-50">
                   {/* Status header */}
                   <div className="flex items-center justify-between pb-2.5 mb-2.5 border-b border-white/[0.06] px-1">
                     <div className="flex items-center gap-2">
                       <Image
                         src="/brand/kyro-logo-white.png"
                         alt="KYRO"
-                        width={14}
-                        height={16}
+                        width={18}
+                        height={21}
                         className="object-contain"
                       />
                       <span className="text-xs font-semibold text-white tracking-tight">
@@ -249,17 +265,7 @@ export default function Navbar() {
             </div>
           </nav>
         </div>
-
-        {/* Right CTA (Desktop) */}
-        <div className="pointer-events-auto hidden md:flex items-center">
-          <Link
-            href="/contact"
-            className="btn-press text-xs font-medium text-black bg-[#f5f5f7] hover:bg-white px-3.5 py-1.5 rounded-full transition-all shadow-sm"
-          >
-            Start a project
-          </Link>
-        </div>
-      </div>
-    </header>
+      </aside>
+    </>
   );
 }

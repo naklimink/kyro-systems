@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/[0.06] bg-black text-[#86868b] py-12 text-xs">
+    <footer className="border-t border-white/[0.06] bg-black text-[#86868b] pt-12 pb-28 sm:pb-32 text-xs">
       <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <span className="text-[#f5f5f7] font-medium">KYRO</span>
